@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome</title>
+<SCRIPT type=text/javascript>
+function formSubmit() {   
+	var x = document.forms["myForm"]["name"].value;
+	var y = document.forms["myForm"]["email"].value;
+	var z = document.forms["myForm"]["number"].value;
+	var a = document.forms["myForm"]["address"].value;
+    if (x == "" || y=="" || z=="" || a=="") {
+        alert("Fields are required");
+        return false;
+    }
+    
+   document.getElementById("myForm").style.display = 'none';
+   document.write("Thank You");
+} 
+</SCRIPT>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<form action="result.html" method="post" name="myForm" id="myForm" >
+<div class ="form">
+  Name:    &nbsp;&nbsp; &nbsp;     <input type="text" name="name" id="name" required ><br><br>
+  Email:  &nbsp;&nbsp; &nbsp;     <input type="email" name="email" id="email" required><br><br>
+  Phone: &nbsp;&nbsp; &nbsp;      <input type="number" name="number" maxlength="10" id="phone" required> <br><br>
+  Address:  &nbsp;   <input type="text" name="address" maxlength="40" id="address" required><br><br>
+  Preferences: 
+  <br><input type="radio" name="preference" value="Yes" checked> Yes<br>
+  <input type="radio" name="preference" value="No"> No<br>
+  <br>
+  <input type="button" onclick="formSubmit()" value="Submit" id="button"></div>
+</form>
+
+
+</body>
+</html>
